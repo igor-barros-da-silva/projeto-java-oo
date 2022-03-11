@@ -14,6 +14,10 @@ public class Venda {
 	private BigDecimal ValorTotal;
 	
 	private List<Produto> listaProdutos = new ArrayList<Produto>();
+	
+	public List<Produto> getListaProdutos() {
+		return listaProdutos;
+	}
 
 	public Long getId() {
 		return id;
