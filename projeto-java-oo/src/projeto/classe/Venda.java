@@ -18,6 +18,10 @@ public class Venda {
 	public List<Produto> getListaProdutos() {
 		return listaProdutos;
 	}
+	
+	public void addProduto(Produto produto) {
+		this.listaProdutos.add(produto);		
+	}
 
 	public Long getId() {
 		return id;
