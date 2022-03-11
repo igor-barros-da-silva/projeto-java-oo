@@ -24,7 +24,13 @@ public class ExecutarTeste {
 		produto3.setId(3L);
 		produto3.setNome("SISTEMA ERP");
 		produto3.setValor(BigDecimal.valueOf(200));
+		
+		Produto produto4 = new Produto();		
+		produto4.setId(4L);
+		produto4.setNome("SISTEMA EAD");
+		produto4.setValor(BigDecimal.valueOf(700));
 
+		
 		Venda venda = new Venda();
 		venda.setDescricaoVenda("Software");
 		venda.setEnderecoEntrega("Rua da Azeda, 85 ");
@@ -34,11 +40,10 @@ public class ExecutarTeste {
 
 		venda.getListaProdutos().add(produto1);
 		venda.getListaProdutos().add(produto2); // Método próprio do Java - não é possível fazer validações.
-		venda.addProduto(produto3); // É possível fazer validações.				
-
-		// Gerando pelo toString() da classe Venda.
-		System.out.println("Descrição da venda: " + venda.getDescricaoVenda()
-		+ "e total: " + venda.totalVenda());
+		venda.addProduto(produto3); // É possível fazer validações.	
+		venda.getListaProdutos().add(produto4);		
+		
+		System.out.println("Total da venda: " + venda.getValorTotal());
 	}
 
 }

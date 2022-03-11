@@ -11,7 +11,7 @@ public class Venda {
 	private String nomeCliente;
 	private String enderecoEntrega;
 
-	private BigDecimal ValorTotal;
+	private BigDecimal valorTotal;
 
 	private List<Produto> listaProdutos = new ArrayList<Produto>();
 
@@ -23,11 +23,15 @@ public class Venda {
 		this.listaProdutos.add(produto);
 	}
 
-	public double totalVenda() {
+	// Acessando o total da venda por meio de método privado.
+	private double totalVenda() {
 		double total = 0.0;
 		for (Produto produto : listaProdutos) {
 			total += produto.getValor().doubleValue();
 		}
+
+		this.valorTotal = BigDecimal.valueOf(total);
+
 		return total;
 	}
 
@@ -64,11 +68,12 @@ public class Venda {
 	}
 
 	public BigDecimal getValorTotal() {
-		return ValorTotal;
+		this.valorTotal = BigDecimal.valueOf(totalVenda());
+		return valorTotal;
 	}
 
 	public void setValorTotal(BigDecimal valorTotal) {
-		ValorTotal = valorTotal;
+		this.valorTotal = valorTotal;
 	}
 
 	@Override
@@ -99,7 +104,7 @@ public class Venda {
 	@Override
 	public String toString() {
 		return "Venda [id=" + id + ", descricaoVenda=" + descricaoVenda + ", nomeCliente=" + nomeCliente
-				+ ", enderecoEntrega=" + enderecoEntrega + ", ValorTotal=" + ValorTotal + ", listaProdutos="
+				+ ", enderecoEntrega=" + enderecoEntrega + ", valorTotal=" + valorTotal + ", listaProdutos="
 				+ listaProdutos + "]";
 	}
 
