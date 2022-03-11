@@ -28,14 +28,18 @@ public class ExecutarTeste {
 		Venda venda = new Venda();
 		venda.setDescricaoVenda("Software");
 		venda.setEnderecoEntrega("Rua da Azeda, 85 ");
-		venda.setId(1L);
+		venda.setId(1L);		
+		venda.setNomeCliente("Igor");
+		venda.setValorTotal(BigDecimal.valueOf(95)); 
 
 		venda.getListaProdutos().add(produto1);
 		venda.getListaProdutos().add(produto2); // Método próprio do Java - não é possível fazer validações.
-		venda.addProduto(produto3); // É possível fazer validações.
-
-		venda.setNomeCliente("Igor");
-		venda.setValorTotal(BigDecimal.valueOf(95));
+		venda.addProduto(produto3); // É possível fazer validações.		
+		
+		// Imprimindo na console a listaProdutos.
+		for (Produto produto : venda.getListaProdutos()) {
+			System.out.println("Descrição do produto: " + produto);
+		}
 
 		// Gerando pelo toString() da classe Venda.
 		System.out.println("Descrição da venda: " + venda);
