@@ -13,7 +13,7 @@ public class Venda {
 
 	private BigDecimal ValorTotal;
 	
-	private List<Produto> listaprodutos = new ArrayList<Produto>();
+	private List<Produto> listaProdutos = new ArrayList<Produto>();
 
 	public Long getId() {
 		return id;
