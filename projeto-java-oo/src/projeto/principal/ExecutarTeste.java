@@ -16,6 +16,10 @@ public class ExecutarTeste {
 		venda.setNomeCliente("Igor ");
 		venda.setValorTotal(BigDecimal.valueOf(666));
 		
-		System.out.println("Descrição da venda: " + venda.getDescricaoVenda());
+		// Gerando pelo toString() da classe Venda.
+		System.out.println("Descrição da venda: " + venda);
 	}
+		
 }
+
+
