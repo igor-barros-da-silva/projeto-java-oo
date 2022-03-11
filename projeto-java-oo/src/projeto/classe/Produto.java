@@ -6,7 +6,7 @@ public class Produto {
 
 	private Long id;
 	private String nome;
-	private BigDecimal valorTotal;
+	private BigDecimal valor;
 
 	public Long getId() {
 		return id;
@@ -24,16 +24,17 @@ public class Produto {
 		this.nome = nome;
 	}
 
-	public BigDecimal getValorTotal() {
-		return valorTotal;
+	public BigDecimal getValor() {
+		return valor;
 	}
 
-	public void setValorTotal(BigDecimal valorTotal) {
-		this.valorTotal = valorTotal;
+	public void setValor(BigDecimal valor) {
+		this.valor = valor;
 	}
 
 	@Override
 	public String toString() {
-		return "Produto [id=" + id + ", nome=" + nome + ", valorTotal=" + valorTotal + "]";
+		return "Produto [id=" + id + ", nome=" + nome + ", valor=" + valor + "]";
 	}
+
 }
